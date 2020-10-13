@@ -1,0 +1,1 @@
+mama milaramu okna mama papa papa

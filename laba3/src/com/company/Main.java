@@ -3,69 +3,100 @@ package com.company;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
-        Scanner scan = new Scanner(System.in);
-        int choice;
-        System.out.println("1 - Strings;\n2 - Threads;\n3 - .");
-        choice = scan.nextInt();
-        switch (choice){
-            case 1:
-                strTasks();
-                break;
-            case 2:
-                threadsTasks();
-                break;
-            default: System.out.println("Error");
+        int choice=0;
+        while (choice!=-1) {
+            System.out.println("-1 - exit;\n1 - Strings;\n2 - Threads;\n3 - url.");
+            Scanner scan = new Scanner(System.in);
+
+            if (scan.hasNext())// I DONT UNDERSTAND
+                choice = scan.nextInt();
+            else choice = -1;
+            switch (choice) {
+                case 1:
+                    strTasks();
+                    break;
+                case 2:
+                    threadsTasks();
+                    break;
+                case 3:
+                    UrlReader.Read("");
+                default:
+                    System.out.println("Error");
+            }
+            scan.close();
         }
-        threadsTasks();
-}
-    static public void strTasks() throws IOException {
+    }
+    static public void strTasks(){
         Scanner scan = new Scanner(System.in);
         System.out.println("1 - Max len;\n2 - is a palindrome?;\n3 - censure;\n4 - num of entry;\n5 - invert sentence;\n6 - dictionary");
         int choice = scan.nextInt();
+        scan.close();
         String str;
         switch (choice){
             case 1:
-                String [] strs = new String[];
+                String [] strs = new String[3];
+                scan = new Scanner(System.in);
                 System.out.println("input 3 strs");
                 for (int i = 0; i < 3; i++) {
                     strs[i] = scan.nextLine();
                 }
+                System.out.println("strs: " + strs[0] + " | " + strs[1] + " | " + strs[2] + "|");
                 System.out.println(StringFuncs.getMax(strs));
+                scan.close();
                 break;
 
             case 2:
                 System.out.println("input str");
-                str = scan.nextLine();
+                scan = new Scanner(System.in);
+                str = scan.next();
                 System.out.println(StringFuncs.isAPalindrome(str));
+                scan.close();
                 break;
             case 3:
+                scan = new Scanner(System.in);
                 System.out.println("input str");
                 str = scan.nextLine();
                 System.out.println("input rule");
                 String rule = scan.nextLine();
-                System.out.println(StringFuncs.censor(str, rule));
+                System.out.println("with cens: " + StringFuncs.censor(str, rule));
 
+                scan.close();
                 break;
             case 4:
+                scan = new Scanner(System.in);
                 System.out.println("input str");
                 str = scan.nextLine();
                 System.out.println("input str");
                 String smallStr = scan.nextLine();
                 System.out.println(StringFuncs.manyContains(str, smallStr));
+                scan.close();
                 break;
             case 5:
+                scan = new Scanner(System.in);
                 System.out.println("input str");
                 str = scan.nextLine();
                 System.out.println(StringFuncs.reverseWords(str));
+                scan.close();
                 break;
             case 6:
-                String content = new String(Files.readAllBytes(Paths.get("readMe.txt")), "UTF-8");
-                StringFuncs.Dictionary(content);
+                scan = new Scanner(System.in);
+                String content;
+                try {
+                    content = new String(Files.readAllBytes(Paths.get("C:/readMe.txt")), "UTF-8");
+                    System.out.println("content: " + content);
+                    StringFuncs.Dictionary(content);
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+                scan.close();
+                break;
         }
     }
 
@@ -108,6 +139,7 @@ public class Main {
         int size = 100;
         Counter i = new Counter(0);
         Th [] ths = new Th [size];
+
         for (int j = 0; j < size; j++) {
             ths[j] = new Th(i);
             ths[j].start();
@@ -152,7 +184,6 @@ public class Main {
             }
 
         }
-
     }
 
 }

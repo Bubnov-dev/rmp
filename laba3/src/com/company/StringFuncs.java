@@ -16,8 +16,10 @@ public class StringFuncs {
     public static boolean isAPalindrome (String str){
         char [] strC = str.toCharArray();
         int len = str.length();
-        for (int i=0;i < floor(len/2); i++){
-            if (strC[i]  != strC[len-i]){
+        int half = (int)floor(len/2);
+        System.out.println("len : " + len + "\nlen/2: " + (len/2) + "\nfloor: " + floor(len/2));
+        for (int i=0;i < half; i++){
+            if (strC[i]  != strC[len-i-1]){
                 return false;
             }
         }
@@ -25,26 +27,25 @@ public class StringFuncs {
     }
 
     public static String censor (String str, String cens){
-        return str.replace(cens, "[вырезано цензурой");
+        return str.replace(cens, "[вырезано цензурой]");
     }
 
     public static int manyContains (String bigStr, String smallStr){
         int total = -1;
         int index = 0;
-
-        while (index!= -1){
-            index = bigStr.indexOf(smallStr, index);
+        do{
+            index = 1+bigStr.indexOf(smallStr, index);
             total ++;
-        }
+        }while (index!=0);
         return total;
     }
 
     public static String reverseWords(String str){
         String [] words = str.split(" ");
         String total ="";
-        for (String word : words){
-            word = new StringBuilder(word).reverse().toString();
-            total.concat(word).concat(" ");
+        for (int i=0;i < words.length; i++){
+            words[i] = new StringBuilder(words[i]).reverse().toString();
+            total+=words[i]+" ";
         }
 
         total = new StringBuilder(total).reverse().toString().replaceFirst(" ", "");
