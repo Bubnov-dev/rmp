@@ -34,69 +34,69 @@ public class Main {
     }
     static public void strTasks(){
         Scanner scan = new Scanner(System.in);
-        System.out.println("1 - Max len;\n2 - is a palindrome?;\n3 - censure;\n4 - num of entry;\n5 - invert sentence;\n6 - dictionary");
-        int choice = scan.nextInt();
+        //System.out.println("1 - Max len;\n2 - is a palindrome?;\n3 - censure;\n4 - num of entry;\n5 - invert sentence;\n6 - dictionary");
+        int choice = 1;
         scan.close();
-        String str;
-        switch (choice){
-            case 1:
-                String [] strs = new String[3];
-                scan = new Scanner(System.in);
-                System.out.println("input 3 strs");
-                for (int i = 0; i < 3; i++) {
-                    strs[i] = scan.nextLine();
-                }
-                System.out.println("strs: " + strs[0] + " | " + strs[1] + " | " + strs[2] + "|");
-                System.out.println(StringFuncs.getMax(strs));
-                scan.close();
-                break;
+        String [] str = new String[3];
+        str[0] = "mama mila ramu";
+        str[1] = "mila";
+        str [2] = "qwertytrewq";
+        for (int j = 1; j < 7; j++) {
 
-            case 2:
-                System.out.println("input str");
-                scan = new Scanner(System.in);
-                str = scan.next();
-                System.out.println(StringFuncs.isAPalindrome(str));
-                scan.close();
-                break;
-            case 3:
-                scan = new Scanner(System.in);
-                System.out.println("input str");
-                str = scan.nextLine();
-                System.out.println("input rule");
-                String rule = scan.nextLine();
-                System.out.println("with cens: " + StringFuncs.censor(str, rule));
+            System.out.println("_____________________________________________\n\n");
+            choice = j;
+            switch (choice) {
+                case 1:
+                    scan = new Scanner(System.in);
+                    System.out.println("input 3 strs");
+                    /*for (int i = 0; i < 3; i++) {
+                        str[i] = scan.nextLine();
+                    }*/
+                    System.out.println("strs: " + str[0] + " | " + str[1] + " | " + str[2] + "|");
+                    System.out.println(StringFuncs.getMax(str));
+                    scan.close();
+                    break;
 
-                scan.close();
-                break;
-            case 4:
-                scan = new Scanner(System.in);
-                System.out.println("input str");
-                str = scan.nextLine();
-                System.out.println("input str");
-                String smallStr = scan.nextLine();
-                System.out.println(StringFuncs.manyContains(str, smallStr));
-                scan.close();
-                break;
-            case 5:
-                scan = new Scanner(System.in);
-                System.out.println("input str");
-                str = scan.nextLine();
-                System.out.println(StringFuncs.reverseWords(str));
-                scan.close();
-                break;
-            case 6:
-                scan = new Scanner(System.in);
-                String content;
-                try {
-                    content = new String(Files.readAllBytes(Paths.get("C:/readMe.txt")), "UTF-8");
-                    System.out.println("content: " + content);
-                    StringFuncs.Dictionary(content);
-                }
-                catch (Exception e) {
-                    e.printStackTrace();
-                }
-                scan.close();
-                break;
+                case 2:
+                    System.out.println("input str");
+                    scan = new Scanner(System.in);
+                    System.out.println(StringFuncs.isAPalindrome(str[2]));
+                    scan.close();
+                    break;
+                case 3:
+                    scan = new Scanner(System.in);
+                    System.out.println("input str");
+                    System.out.println("input rule");
+                    System.out.println("with cens: " + StringFuncs.censor(str[0], str[1]));
+
+                    scan.close();
+                    break;
+                case 4:
+                    scan = new Scanner(System.in);
+                    System.out.println("input str");
+                    System.out.println("input str");
+                    System.out.println(StringFuncs.manyContains(str[0], str[1]));
+                    scan.close();
+                    break;
+                case 5:
+                    scan = new Scanner(System.in);
+                    System.out.println("input str");
+                    System.out.println(StringFuncs.reverseWords(str[0]));
+                    scan.close();
+                    break;
+                case 6:
+                    scan = new Scanner(System.in);
+                    String content;
+                    try {
+                        content = new String(Files.readAllBytes(Paths.get("C:/readMe.txt")), "UTF-8");
+                        System.out.println("content: " + content);
+                        StringFuncs.Dictionary(content);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    scan.close();
+                    break;
+            }
         }
     }
 

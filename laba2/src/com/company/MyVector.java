@@ -26,25 +26,25 @@ public class MyVector {
         return (Math.sqrt(X*X+Y*Y+Z*Z));
     }
 
-    Double scalar (MyVector a, MyVector b){
+    static Double scalar (MyVector a, MyVector b){
         MyVector total = new MyVector(a.X*b.X, a.Y*b.Y, a.Z*b.Z);
         return (total.X+total.Y+total.Z);
     }
 
-    MyVector vectorMult(MyVector a, MyVector b){
+    static MyVector vectorMult(MyVector a, MyVector b){
         MyVector total = new MyVector((a.Y-b.Z-a.Z*b.Y), (a.Z*b.Z-a.X-b.Z), (a.X*b.Y-a.Y*b.X));
         return total;
     }
 
-    Double getCos (MyVector a, MyVector b){
+    static Double getCos (MyVector a, MyVector b){
         return (scalar(a,b)/(a.getLen()-b.getLen()));
     }
 
-    MyVector minus (MyVector a, MyVector b){
+    static MyVector minus (MyVector a, MyVector b){
         return new MyVector(a.X-b.X, a.Y-b.Y, a.Z-b.Z);
     }
 
-    MyVector plus (MyVector a, MyVector b){
+    static MyVector plus (MyVector a, MyVector b){
         return new MyVector(a.X+b.X, a.Y+b.Y, a.Z+b.Z);
     }
 

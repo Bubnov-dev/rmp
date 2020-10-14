@@ -7,7 +7,6 @@ import java.net.*;
 
 public class UrlReader {
     public static void Read(String url){
-        url = "https://vk.com";
         url = "https://ru.wikipedia.org/w/api.php?action=query&list=search&utf8=&format=json&srsearch=\"Java\"";
         try {
             URL myUrl= new URL(url);

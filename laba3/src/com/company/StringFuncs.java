@@ -1,5 +1,9 @@
 package com.company;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 import static java.lang.Math.floor;
 
 public class StringFuncs {
@@ -54,34 +58,15 @@ public class StringFuncs {
 
     }
     public static void Dictionary(String str){
+        str+=" ";
         String [] words = str.split(" ");
-        words = getArrayNomDuplicates(words);
-        for (String word: words
+        Set<String> set = new HashSet<String>(Arrays.asList(words));
+        String[] words1 = set.toArray(new String[set.size()]);
+        for (String word: words1
              ) {
             System.out.println(word + " : " + manyContains(str, word));
         }
     }
 
-    private static String[] getArrayNomDuplicates(String[] source) {
-        int countRet = 0;
-        for (int i = 0; i < source.length; i++) {
-            for (int j = i + 1; j < source.length; j++) {
-                if (source[i] == source[j])
-                    countRet++;
-            }
-        }
-        String [] nonDup = new String [source.length - countRet];
-        nonDup[0] = source[0];
-        int nonDupIndexFill = 1;
-        for (int i = 1; i < source.length; i++) {
-            boolean flagNonDup = true;
-            for (int j = 0; j <= nonDupIndexFill; j++) {
-                if (source[i] == nonDup[j])
-                    flagNonDup = false;
-            }
-            if (flagNonDup)
-                nonDup[nonDupIndexFill++] = source[i];
-        }
-        return nonDup;
-    }
+
 }
