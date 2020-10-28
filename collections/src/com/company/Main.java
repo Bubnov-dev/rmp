@@ -10,6 +10,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
+
+        Collections_laba.Dictionary("one two two three three three");
         List<String> list = new ArrayList();
         list.add("str1");
         list.add("str2");

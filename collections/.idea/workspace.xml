@@ -80,4 +80,30 @@
       </map>
     </option>
   </component>
+  <component name="WindowStateProjectService">
+    <state width="1429" height="224" key="GridCell.Tab.0.bottom" timestamp="1603916248949">
+      <screen x="65" y="0" width="1471" height="864" />
+    </state>
+    <state width="1429" height="224" key="GridCell.Tab.0.bottom/65.0.1471.864@65.0.1471.864" timestamp="1603916248949" />
+    <state width="1429" height="224" key="GridCell.Tab.0.center" timestamp="1603916248948">
+      <screen x="65" y="0" width="1471" height="864" />
+    </state>
+    <state width="1429" height="224" key="GridCell.Tab.0.center/65.0.1471.864@65.0.1471.864" timestamp="1603916248948" />
+    <state width="1429" height="224" key="GridCell.Tab.0.left" timestamp="1603916248948">
+      <screen x="65" y="0" width="1471" height="864" />
+    </state>
+    <state width="1429" height="224" key="GridCell.Tab.0.left/65.0.1471.864@65.0.1471.864" timestamp="1603916248948" />
+    <state width="1429" height="224" key="GridCell.Tab.0.right" timestamp="1603916248949">
+      <screen x="65" y="0" width="1471" height="864" />
+    </state>
+    <state width="1429" height="224" key="GridCell.Tab.0.right/65.0.1471.864@65.0.1471.864" timestamp="1603916248949" />
+    <state x="409" y="58" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1603916004698">
+      <screen x="65" y="0" width="1471" height="864" />
+    </state>
+    <state x="409" y="58" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/65.0.1471.864@65.0.1471.864" timestamp="1603916004698" />
+    <state x="464" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1603915988856">
+      <screen x="65" y="0" width="1471" height="864" />
+    </state>
+    <state x="464" y="181" width="672" height="678" key="search.everywhere.popup/65.0.1471.864@65.0.1471.864" timestamp="1603915988856" />
+  </component>
 </project>
