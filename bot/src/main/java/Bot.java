@@ -18,8 +18,10 @@ public class Bot extends TelegramLongPollingBot {
         got = false;
         GetInfo getInfo = new GetInfo(inMessage.getText(), this);
         Waiter waiter = new Waiter(inMessage.getChatId(), this);
-        getInfo.start();
-        waiter.start();
+        new Thread(getInfo).start();
+        new Thread(waiter).start();
+        //getInfo.start();
+        //waiter.start();
     }
 
     /**
@@ -62,7 +64,7 @@ public class Bot extends TelegramLongPollingBot {
 }
 
 
-class Waiter extends Thread{
+class Waiter implements Runnable{
     long chatid;
     Bot bot;
 
@@ -73,21 +75,22 @@ class Waiter extends Thread{
 
     @Override
     public void run() {
-        aRun();
+        synchronized (bot){
+            System.out.println("i wait");
+            try {
+                bot.wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("notified");
+            bot.got = false;
+            if (bot.output != "null") {
+                bot.sendMsg(chatid, bot.output);
+            }
+            else {
+                bot.sendMsg(chatid, "Sorry, no such city");
+            }
+        }
     }
-    public synchronized void aRun(){
-        System.out.println("i wait");
-        bot.sendMsg(chatid, "please, wait");
-        while (bot.got == false) {
-            System.out.println("waiting: " + bot.got);
-        }
-        System.out.println("notified");
-        bot.got = false;
-        if (bot.output != "null") {
-            bot.sendMsg(chatid, bot.output);
-        }
-        else {
-            bot.sendMsg(chatid, "Sorry, no such city");
-        }
-    }
+
 }

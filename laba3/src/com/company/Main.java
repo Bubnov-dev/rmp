@@ -13,7 +13,7 @@ public class Main {
         while (choice!=-1) {
             System.out.println("-1 - exit;\n1 - Strings;\n2 - Threads;\n3 - url.");
             Scanner scan = new Scanner(System.in);
-
+            System.out.println();
             if (scan.hasNext())// I DONT UNDERSTAND
                 choice = scan.nextInt();
             else choice = -1;
@@ -40,7 +40,7 @@ public class Main {
         String [] str = new String[3];
         str[0] = "mama mila ramu";
         str[1] = "mila";
-        str [2] = "qwertytrewq";
+        str[2] = "qwertytrewq";
         for (int j = 1; j < 7; j++) {
 
             System.out.println("_____________________________________________\n\n");

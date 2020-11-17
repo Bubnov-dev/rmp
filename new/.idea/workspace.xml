@@ -19,32 +19,28 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bead444-aa90-45b6-858c-a91e6924f05d" name="Default Changelist" comment="" />
+    <list default="true" id="14fea897-58f1-46b1-ae55-909745613bc4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1jWMlrNP6Wr7FqZLtCfEEt4uTRA" />
+  <component name="ProjectId" id="1jVTuNnfx6BKOwbIROvNzJTeBfO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/test" />
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
-      <module name="collections" />
+      <module name="new" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -61,11 +57,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4bead444-aa90-45b6-858c-a91e6924f05d" name="Default Changelist" comment="" />
-      <created>1603915550450</created>
+      <changelist id="14fea897-58f1-46b1-ae55-909745613bc4" name="Default Changelist" comment="" />
+      <created>1603888483130</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1603915550450</updated>
+      <updated>1603888483130</updated>
     </task>
     <servers />
   </component>
@@ -82,29 +78,32 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1429" height="224" key="GridCell.Tab.0.bottom" timestamp="1603916248949">
+    <state x="582" y="187" key="FileChooserDialogImpl" timestamp="1603899796434">
       <screen x="65" y="0" width="1471" height="864" />
     </state>
-    <state width="1429" height="224" key="GridCell.Tab.0.bottom/65.0.1471.864@65.0.1471.864" timestamp="1603916248949" />
-    <state width="1429" height="224" key="GridCell.Tab.0.center" timestamp="1603916248948">
+    <state x="582" y="187" key="FileChooserDialogImpl/65.0.1471.864@65.0.1471.864" timestamp="1603899796434" />
+    <state width="1429" height="224" key="GridCell.Tab.0.bottom" timestamp="1603915521754">
       <screen x="65" y="0" width="1471" height="864" />
     </state>
-    <state width="1429" height="224" key="GridCell.Tab.0.center/65.0.1471.864@65.0.1471.864" timestamp="1603916248948" />
-    <state width="1429" height="224" key="GridCell.Tab.0.left" timestamp="1603916248948">
+    <state width="1429" height="224" key="GridCell.Tab.0.bottom/65.0.1471.864@65.0.1471.864" timestamp="1603915521754" />
+    <state width="1429" height="224" key="GridCell.Tab.0.center" timestamp="1603915521754">
       <screen x="65" y="0" width="1471" height="864" />
     </state>
-    <state width="1429" height="224" key="GridCell.Tab.0.left/65.0.1471.864@65.0.1471.864" timestamp="1603916248948" />
-    <state width="1429" height="224" key="GridCell.Tab.0.right" timestamp="1603916248949">
+    <state width="1429" height="224" key="GridCell.Tab.0.center/65.0.1471.864@65.0.1471.864" timestamp="1603915521754" />
+    <state width="1429" height="224" key="GridCell.Tab.0.left" timestamp="1603915521753">
       <screen x="65" y="0" width="1471" height="864" />
     </state>
-    <state width="1429" height="224" key="GridCell.Tab.0.right/65.0.1471.864@65.0.1471.864" timestamp="1603916248949" />
-    <state x="409" y="58" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1603916004698">
+    <state width="1429" height="224" key="GridCell.Tab.0.left/65.0.1471.864@65.0.1471.864" timestamp="1603915521753" />
+    <state width="1429" height="224" key="GridCell.Tab.0.right" timestamp="1603915521754">
       <screen x="65" y="0" width="1471" height="864" />
     </state>
-    <state x="409" y="58" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/65.0.1471.864@65.0.1471.864" timestamp="1603916004698" />
-    <state x="464" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1603915988856">
+    <state width="1429" height="224" key="GridCell.Tab.0.right/65.0.1471.864@65.0.1471.864" timestamp="1603915521754" />
+    <state x="242" y="53" key="new project wizard" timestamp="1603915547085">
       <screen x="65" y="0" width="1471" height="864" />
     </state>
-    <state x="464" y="181" width="672" height="678" key="search.everywhere.popup/65.0.1471.864@65.0.1471.864" timestamp="1603915988856" />
+    <state x="242" y="53" key="new project wizard/65.0.1471.864@65.0.1471.864" timestamp="1603915547085" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/new$Main.ic" NAME="Main Coverage Results" MODIFIED="1603915485140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

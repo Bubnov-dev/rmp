@@ -1,8 +1,12 @@
 package com.company;
 
+import com.google.gson.*;
+
 import java.io.BufferedReader;
+import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Type;
 import java.net.*;
 
 public class UrlReader {
@@ -29,10 +33,17 @@ public class UrlReader {
             while((current = in.readLine()) != null) {
                 urlString += current;
             }
-            System.out.println(urlString);
+            //System.out.println(urlString);
+            FileWriter fw = new FileWriter("C:/users/Sisyphus/documents/jsonURL.txt");
+            fw.write(urlString);
+            fw.close();
+            WEB site = new Gson().fromJson(urlString, WEB.class);
+            System.out.println(site.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
 }
+
+

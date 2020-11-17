@@ -8,7 +8,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
-public class GetInfo extends Thread {
+public class GetInfo implements Runnable {
     String input;
     Bot bot;
     public GetInfo(String input, Bot bot) {
@@ -18,34 +18,33 @@ public class GetInfo extends Thread {
 
     @Override
     public void run() {
-        aRun();
-    }
-    public synchronized void aRun(){
-        final CloseableHttpClient httpclient = HttpClients.createDefault();
-        String city = input;
-        String url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=faa0ca0cf9586ea271cb3911327c918f";
-        final HttpUriRequest httpGet = new HttpGet(url);
-        System.out.println("i am here");
-        try
-        {
-            CloseableHttpResponse response1 = httpclient.execute(httpGet);
-            final HttpEntity entity1 = response1.getEntity();
-            String outJson = EntityUtils.toString(entity1);
-            System.out.println(outJson);
-            //Weather weather = new Weather();
-            GreatWeather gWeather = new GreatWeather();
-            Gson gson = new GsonBuilder()
-                    .registerTypeAdapter(GreatWeather.class, new GreatWeatherDeserializer())
-                    .create();
-            gWeather = gson.fromJson(outJson, GreatWeather.class);
-            //System.out.println(gWeather );
-            bot.output = gWeather.toString();
-            bot.got = true;
-            System.out.println("getting info: " + bot.got);
-            System.out.println(bot.output);
-        }
-        catch (Exception e){
-            e.printStackTrace();
+        synchronized (bot){
+            final CloseableHttpClient httpclient = HttpClients.createDefault();
+            String city = input;
+            String url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=faa0ca0cf9586ea271cb3911327c918f";
+            final HttpUriRequest httpGet = new HttpGet(url);
+            System.out.println("i am here");
+            try
+            {
+                CloseableHttpResponse response1 = httpclient.execute(httpGet);
+                final HttpEntity entity1 = response1.getEntity();
+                String outJson = EntityUtils.toString(entity1);
+                System.out.println(outJson);
+                //Weather weather = new Weather();
+                GreatWeather gWeather = new GreatWeather();
+                Gson gson = new GsonBuilder()
+                        .registerTypeAdapter(GreatWeather.class, new GreatWeatherDeserializer())
+                        .create();
+                gWeather = gson.fromJson(outJson, GreatWeather.class);
+                //System.out.println(gWeather );
+                bot.output = gWeather.toString();
+                bot.notify();
+                System.out.println("getting info: " + bot.got);
+                System.out.println(bot.output);
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
         }
     }
 }

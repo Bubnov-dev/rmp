@@ -58,7 +58,6 @@ public class StringFuncs {
 
     }
     public static void Dictionary(String str){
-        str+=" ";
         String [] words = str.split(" ");
         Set<String> set = new HashSet<String>(Arrays.asList(words));
         String[] words1 = set.toArray(new String[set.size()]);
